@@ -1,0 +1,15 @@
+{
+  "extends": "eslint-config-egg",
+  "rules": {
+    // Override our default settings just for this directory
+    "eqeqeq": "warn",
+    "strict": "off"
+  },
+  "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 8,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+  }
+}
