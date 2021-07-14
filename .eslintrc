@@ -11,5 +11,10 @@
       "ecmaFeatures": {
         "jsx": true
       }
+  },
+  "globals": {
+    "localStorage": true,
+    "window" : true,
+    "document": true
   }
 }
