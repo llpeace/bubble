@@ -36,6 +36,8 @@ Animal.prototype.age = 1;
 
 
 // 1.原型链继承
+// 特点: 实例可继承的属性有
+// 缺点: 新实例无法向父类构造函数传参数
 function Cat() {
   this.name = ['cat'];
 }
@@ -45,3 +47,14 @@ Cat.prototype = new Animal();
 var cat = new Cat();
 
 console.log(cat instanceof Animal);
+
+// 2.构造函数继承
+// 特点:
+// 缺点:
+function Dog() {
+  Animal.call(this);
+}
+
+var dog = new Dog();
+
+console.log(dog);
