@@ -49,12 +49,13 @@ var cat = new Cat();
 console.log(cat instanceof Animal);
 
 // 2.构造函数继承
-// 特点:
-// 缺点:
+// 特点: 继承父类构造函数的属性
+// 缺点: 没有继承父类原型属性
 function Dog() {
   Animal.call(this);
 }
 
 var dog = new Dog();
+// dog.__proto__ = { test: 123 };
 
-console.log(dog);
+console.log(Dog.prototype);
