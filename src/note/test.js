@@ -1,3 +1,7 @@
+/*eslint-disable */
+
+const { resolveInclude } = require("ejs");
+
 /* new关键字 函数a
 * 1.创建一个新对象
 * 2.对象的构造函数为函数a
@@ -5,12 +9,12 @@
 * 4.返回this
 */
 
-const myNew = function (func) {
+const myNew = function(func) {
   const newObj = {};
   newObj.__proto__ = func.prototype;
   const res = func.call(newObj);
   return res || this;
-}
+};
 
 /*
 * obj instanceof Object
@@ -27,10 +31,10 @@ function myInstanceof(left, right) {
 
 
 function Animal() {
-  this.name = ['animal', 'zoo'];
-  this.say = function () {
+  this.name = [ 'animal', 'zoo' ];
+  this.say = function() {
     console.log(this.name);
-  }
+  };
 }
 Animal.prototype.age = 1;
 
@@ -39,7 +43,7 @@ Animal.prototype.age = 1;
 // 特点: 实例可继承的属性有
 // 缺点: 新实例无法向父类构造函数传参数
 function Cat() {
-  this.name = ['cat'];
+  this.name = [ 'cat' ];
 }
 
 Cat.prototype = new Animal();
@@ -59,3 +63,15 @@ var dog = new Dog();
 // dog.__proto__ = { test: 123 };
 
 console.log(Dog.prototype);
+
+
+console.log('123');
+setTimeout(() => {
+  console.log('setTimeout');
+  const p = new Promise((resolve, reject) => {
+    console.log('new promise');
+    resolve(666);
+  }).then(res => {
+    console.log(res);
+  })
+}, 0);

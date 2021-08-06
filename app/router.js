@@ -5,8 +5,8 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.renderIndex);
-  // router.redirect('/', '/dist', 302);
+  router.get('/home', controller.home.renderIndex);
+  router.redirect('/', '/home', 302);
 
   router.get('*', controller.home.renderIndex);
 };
