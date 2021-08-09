@@ -65,13 +65,41 @@ var dog = new Dog();
 console.log(Dog.prototype);
 
 
-console.log('123');
-setTimeout(() => {
-  console.log('setTimeout');
-  const p = new Promise((resolve, reject) => {
-    console.log('new promise');
-    resolve(666);
-  }).then(res => {
-    console.log(res);
-  })
-}, 0);
+
+// console.log('123');
+// setTimeout(() => {
+//   console.log('setTimeout');
+//   const p = new Promise((resolve, reject) => {
+//     console.log('new promise');
+//     resolve(666);
+//   }).then(res => {
+//     setTimeout(() => {
+//       console.log(res);
+//     }, 0);
+//   })
+//   console.log(789);
+// }, 0);
+
+// console.log('345');
+
+// 节流函数: 只要在一定间隔时间内触发就会执行
+// 常用场景： resize，scroll
+
+function throttle(func, delay) {
+  let last = 0;
+  return function () {
+    let now = +new Date();
+    if (now - last >= delay) {
+      console.log(now, last);
+      func.apply(this, arguments);
+      last = now;
+    }
+  }
+}
+
+const func = throttle(() => console.log(123), 1000);
+func();
+setInterval(() => {
+  console.log('emit');
+  func();
+}, 100)
