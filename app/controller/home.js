@@ -1,5 +1,4 @@
 'use strict';
-const Fs = require('fs');
 const ejs = require('ejs');
 // 指定ejs规则
 ejs.delimiter = '?';

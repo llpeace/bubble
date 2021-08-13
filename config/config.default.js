@@ -26,8 +26,5 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
-  return {
-    ...config,
-    ...userConfig,
-  };
+  return Object.assign({}, config, userConfig);
 };

@@ -4,7 +4,7 @@ import { Route, Link, BrowserRouter } from 'react-router-dom';
 
 import About from './gww';
 
-function App(props) {
+function App() {
   return (
     <div>
       <h1>test</h1>
