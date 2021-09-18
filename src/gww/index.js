@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './index.less';
+import styles from './index.less';
 
 export default function Test() {
   return (
     <>
-      <div className="test-wrapper">
+      <div className={styles['test-wrapper']}>
         <span>查看记录</span>
         <div className="history">
           <span>下载明细</span>

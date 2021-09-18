@@ -64,7 +64,13 @@ module.exports = {
         test: /\.css$/i,
         use: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: 'catd-pro-[local]-[hash:5]',
+            },
+          },
         ],
       },
       {
@@ -75,6 +81,10 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: 'catd-pro-[local]-[hash:5]',
+            },
           },
           {
             loader: 'less-loader',
